@@ -22,6 +22,7 @@ function getUserInfo() {
       if (res.status !== 0) {
         return layui.layer.msg(res.message)
       }
+      layui.layer.msg(res.message)
       renderAvatar(res.data);
     },
   });
@@ -35,12 +36,12 @@ function renderAvatar(user) {
   // 2.2.用户头像
   if (user.user_pic !== null) {
     $('.layui-nav-img').show().attr('src', user.user_pic);
-    $('.user-avatar').hide();
+    $('.text-avatar').hide();
   } else {
     // 没有头像
     $('.layui-nav-img').hide();
     var text = name[0].toUpperCase();
-    $('.user-avatar').show().html(text)
+    $('.text-avatar').show().html(text)
   }
 }
 
